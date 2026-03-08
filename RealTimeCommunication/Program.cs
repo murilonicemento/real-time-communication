@@ -1,7 +1,15 @@
+using Microsoft.AspNetCore.SignalR;
+using RealTimeCommunication.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR(hubOptions =>
+{
+    hubOptions.AddFilter<LanguageFilterHub>();
+});
+builder.Services.AddSingleton<LanguageFilterHub>();
 
 var app = builder.Build();
 
@@ -20,7 +28,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
+app.MapHub<ChatHub>("/chatHub");
 app.MapRazorPages()
-   .WithStaticAssets();
+    .WithStaticAssets();
 
 app.Run();

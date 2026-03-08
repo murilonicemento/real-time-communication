@@ -1,10 +1,65 @@
 ﻿@page
-@model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+
+    <!-- Campo para informar o usuário destinatário da mensagem -->
+    <div class="row p-1">
+        <div class="col-2">User</div>
+        <div class="col-4">
+            <input type="text" id="userInput" />
+        </div>
+    </div>
+
+    <!-- Campo para escrever a mensagem -->
+    <div class="row p-1">
+        <div class="col-2">Message</div>
+        <div class="col-4">
+            <input type="text" class="w-100" id="messageInput" />
+        </div>
+    </div>
+
+    <!-- Campo para informar o nome do grupo -->
+    <div class="row p-1">
+        <div class="col-2">Group</div>
+        <div class="col-4">
+            <input type="text" id="groupInput" />
+        </div>
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="row p-1">
+        <div class="col-6">
+
+            <!-- Envia mensagem privada para um usuário -->
+            <input type="button" id="sendButton" value="Send Private Message" />
+
+            <!-- Adiciona a conexão atual a um grupo -->
+            <input type="button" id="joinGroup" value="Join Group" />
+
+            <!-- Remove a conexão atual do grupo -->
+            <input type="button" id="leaveGroup" value="Leave Group" />
+
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+
+    <!-- Lista onde as mensagens recebidas serão exibidas -->
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+
 </div>
+
+<!-- Biblioteca oficial do SignalR -->
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+
+<!-- Script responsável pela lógica do chat -->
+<script src="~/js/chat.js"></script>

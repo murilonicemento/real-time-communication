@@ -1,5 +1,46 @@
+## Build Folders
 bin/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
+out/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio
+.vs/
+*.VC.db
+*.VC.VC.opendb
+.vscode/
+
+## Rider
+.idea/
+
+## Dotnet Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## NuGet
+*.nupkg
+packages/
+*.snupkg
+.nuget/
+
+## ASP.NET Core
+appsettings*.json
+wwwroot/lib/
+
+## Logs
+*.log
+
+## OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Publish output
+publish/
